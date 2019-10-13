@@ -4407,31 +4407,28 @@ const githubData = [
         }
     }
 ]
-console.log(githubData.length);
+// console.log(githubData.length);
+// console.log(githubData[6]);
 let myObj = "8030403992";
 for (let i = 0; i < githubData.length; i++) {
     if (githubData[i].id === "8030403992") {
         myObj = githubData[i].id;
     }
 }
-console.log(myObj);
+// console.log ("object text", Object.values(githubData));
+// trying for in loop
+
+// console.log("my object", myObj);
 
 
 console.log("stuff", githubData[6].payload.commits[0].message);
-//   const githubData = [
 
-    // "payload": {
-    //     "push_id": 2753553675,
-    //     "size": 1,
-    //     "distinct_size": 1,
-    //     "ref": "refs/heads/master",
-    //     "head": "e15cd75fcba0a77ee6fc8afc7376b226f4dc4645",
-    //     "before": "9635e8e362802c3022b815bbeca90b75f5c328a3",
-    //     "commits": [
-    //       {
-    //         "sha": "e15cd75fcba0a77ee6fc8afc7376b226f4dc4645",
-    //         "author": {
-    //           "email": "chortlehoort@gmail.com",
-    //           "name": "Steve Brownlee"
-    //         },
-    //         "message": "Added clarification for where to clone static site",
+let objectNeeded = githubData.filter(function(myId) {
+    return myId.id === "8030403992";
+})
+console.log("test of .filter", objectNeeded);
+// for in loop to find data
+for (let prop in objectNeeded) {
+    console.log("data", objectNeeded);
+}
+console.log("my objectNeeded dot notation console log", objectNeeded[0].payload.commits[0].message);
